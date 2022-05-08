@@ -2,7 +2,9 @@
   "name": "react-tabbed-area",
   "version": "1.0.0",
   "description": "Easy to use tabbing component for React",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "private": false,
   "scripts": {
     "test": "jest --verbose --watch",
     "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files"
@@ -12,12 +14,23 @@
     "url": "git+https://github.com/iwk549/react-tabbed-area.git"
   },
   "keywords": [
-    "tabs"
+    "tabs",
+    "tabbed area",
+    "content area",
+    "react"
   ],
   "author": "Ian Kendall",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/iwk549/react-tabbed-area/issues"
   },
-  "homepage": "https://github.com/iwk549/react-tabbed-area#readme"
+  "homepage": "https://github.com/iwk549/react-tabbed-area#readme",
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.10",
+    "@babel/core": "^7.17.10",
+    "@babel/preset-env": "^7.17.10"
+  }
 }
