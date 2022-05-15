@@ -5,7 +5,7 @@ Easy to use tabbing component for React
 ## Installation
 
 ```
-npm install react-svg-tournament-bracket
+npm install react-tabbed-area
 ```
 
 ## Usage
