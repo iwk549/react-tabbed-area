@@ -52,7 +52,7 @@ const HorizontalTabs = ({
         const isSelected = tabName === (selectedTab.name || selectedTab);
         const isHovered = tabName === hovered;
         return (
-          <div className="col" key={idx} style={{ gridColumn: idx + 1 }}>
+          <div key={idx} style={{ gridColumn: idx + 1 }}>
             <div
               onMouseEnter={() => handleMouseEnter(tabName)}
               onMouseLeave={handleMouseLeave}
