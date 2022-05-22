@@ -42,6 +42,7 @@ const HorizontalTabs = ({
     <div
       style={{
         display: "grid",
+        gridTemplateColumns: "repeat(auto-fit, minmax(100px, 1fr))",
         marginLeft: 10,
         marginRight: 10,
       }}
@@ -52,38 +53,37 @@ const HorizontalTabs = ({
         const isSelected = tabName === (selectedTab.name || selectedTab);
         const isHovered = tabName === hovered;
         return (
-          <div key={idx} style={{ gridColumn: idx + 1 }}>
-            <div
-              onMouseEnter={() => handleMouseEnter(tabName)}
-              onMouseLeave={handleMouseLeave}
-              onClick={() => onSelectTab(tab)}
-              style={
-                !isSelected
-                  ? !isHovered
-                    ? {
-                        ...tabStyle,
-                        backgroundColor:
-                          inactiveBackgroundColor || defaultInactiveBG,
-                        color: inactiveTextColor || defaultLightText,
-                      }
-                    : {
-                        ...tabStyle,
-                        ...customTabHovered,
-                        backgroundColor: hoverBackgroundColor || defaultHoverBG,
-                        color: hoverTextColor || defaultDarkText,
-                      }
+          <div
+            key={idx}
+            onMouseEnter={() => handleMouseEnter(tabName)}
+            onMouseLeave={handleMouseLeave}
+            onClick={() => onSelectTab(tab)}
+            style={
+              !isSelected
+                ? !isHovered
+                  ? {
+                      ...tabStyle,
+                      backgroundColor:
+                        inactiveBackgroundColor || defaultInactiveBG,
+                      color: inactiveTextColor || defaultLightText,
+                    }
                   : {
                       ...tabStyle,
-                      ...customTabSelected,
-                      backgroundColor: backgroundColor || defaultBG,
-                      color: color || defaultDarkText,
+                      ...customTabHovered,
+                      backgroundColor: hoverBackgroundColor || defaultHoverBG,
+                      color: hoverTextColor || defaultDarkText,
                     }
-              }
-            >
-              {icon}
-              {icon && !tab.hideName && <>&nbsp;</>}
-              {!tab.hideName && tabName}
-            </div>
+                : {
+                    ...tabStyle,
+                    ...customTabSelected,
+                    backgroundColor: backgroundColor || defaultBG,
+                    color: color || defaultDarkText,
+                  }
+            }
+          >
+            {icon}
+            {icon && !tab.hideName && <>&nbsp;</>}
+            {!tab.hideName && tabName}
           </div>
         );
       })}

@@ -1,6 +1,6 @@
 {
   "name": "react-tabbed-area",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Easy to use tabbing component for React",
   "main": "dist/index.js",
   "module": "dist/index.js",
